@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VESTE: roupas essenciais, estilo sem esforço.">
+  <title>VESTE | Vista sua própria história</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">FRETE GRÁTIS A PARTIR DE R$ 299</div>
+
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="VESTE página inicial">VESTE<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#novidades">Novidades</a>
+      <a href="#produtos" data-category-link="Feminino">Feminino</a>
+      <a href="#produtos" data-category-link="Masculino">Masculino</a>
+      <a href="#sobre">Nossa história</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button" id="searchToggle" aria-label="Mostrar busca" title="Buscar">⌕</button>
+      <button class="cart-button" id="cartToggle" aria-label="Abrir carrinho">Sacola <span id="cartCount">0</span></button>
+    </div>
+  </header>
+
+  <div class="search-bar" id="searchBar">
+    <label for="searchInput">Buscar produtos</label>
+    <input type="search" id="searchInput" placeholder="Ex.: camisa, jaqueta...">
+  </div>
+
+  <main>
+    <section class="hero" id="novidades">
+      <div class="hero-copy">
+        <p class="eyebrow">NOVA COLEÇÃO · 2026</p>
+        <h1>Vista sua<br><em>própria história.</em></h1>
+        <p class="hero-description">Peças essenciais, conforto de verdade e estilo sem esforço. Encontre aquilo que combina com você.</p>
+        <a class="button button-dark" href="#produtos">Explorar coleção <span>↗</span></a>
+        <div class="hero-note"><span class="note-line"></span> MENOS EXCESSO. MAIS PERSONALIDADE.</div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1200&q=85" alt="Modelos adultos usando roupas contemporâneas">
+        <div class="image-label">ESSENCIAIS<br>DA ESTAÇÃO <span>↘</span></div>
+      </div>
+    </section>
+
+    <section class="benefits" aria-label="Vantagens da loja">
+      <div><span>✳</span><p><strong>Estilo atemporal</strong><small>Peças para ir além da estação</small></p></div>
+      <div><span>♧</span><p><strong>Escolhas conscientes</strong><small>Compre menos, escolha melhor</small></p></div>
+      <div><span>↗</span><p><strong>Entrega para todo o Brasil</strong><small>Seu estilo chega até você</small></p></div>
+    </section>
+
+    <section class="products-section" id="produtos">
+      <div class="section-heading">
+        <div><p class="eyebrow">SELEÇÃO VESTE</p><h2>Escolhas da semana<span>.</span></h2></div>
+        <p>Favoritos que combinam com<br>todos os seus planos.</p>
+      </div>
+      <div class="filter-row" role="group" aria-label="Filtrar produtos">
+        <button class="filter active" data-filter="Todos">Todos</button>
+        <button class="filter" data-filter="Feminino">Feminino</button>
+        <button class="filter" data-filter="Masculino">Masculino</button>
+        <button class="filter" data-filter="Acessórios">Acessórios</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>Nenhum produto encontrado. Tente outra busca.</p>
+    </section>
+
+    <section class="quote-section" id="sobre">
+      <p class="eyebrow">NOSSA FILOSOFIA</p>
+      <h2>Não é sobre seguir tendências.<br>É sobre <em>ser você.</em></h2>
+      <p>Na VESTE, acreditamos que o melhor estilo é aquele que faz sentido para a sua vida. Básicos bem pensados, combinações livres e espaço para sua personalidade.</p>
+      <a href="#produtos" class="text-link">Conheça nossas peças <span>→</span></a>
+    </section>
+
+    <section class="newsletter">
+      <div><p class="eyebrow">CARTA VESTE</p><h2>Novidades, sem excesso.</h2><p>Receba lançamentos e inspirações direto no seu e-mail.</p></div>
+      <form id="newsletterForm">
+        <label class="sr-only" for="emailInput">Seu e-mail</label>
+        <input id="emailInput" type="email" placeholder="Seu melhor e-mail" required>
+        <button type="submit" aria-label="Cadastrar e-mail">Cadastrar ↗</button>
+      </form>
+      <p class="newsletter-message" id="newsletterMessage" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="logo" href="#">VESTE<span>.</span></a>
+    <p>Vista sua própria história.</p>
+    <div><a href="#produtos">Coleção</a><a href="#sobre">Sobre nós</a><a href="mailto:contato@veste.exemplo">Contato</a></div>
+    <small>© 2026 VESTE. Loja demonstrativa para fins de estudo.</small>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrinho de compras" aria-hidden="true">
+    <div class="cart-header"><h2>Sua sacola</h2><button id="cartClose" aria-label="Fechar carrinho">✕</button></div>
+    <div id="cartItems" class="cart-items"><p class="cart-empty">Sua sacola está vazia por enquanto.</p></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">R$ 0,00</strong></div>
+      <button class="button button-dark checkout-button" id="checkoutButton">Finalizar pedido</button>
+      <small>Checkout demonstrativo. Nenhum pagamento será realizado.</small>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
